@@ -40,6 +40,10 @@ const App = () => {
                 playerName="Mike"
                 playerScore={20}
             />
+            <Player 
+                playerName="Shelbey"
+                playerScore={21}
+            />
         </div>
     );
 }
