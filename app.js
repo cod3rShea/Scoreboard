@@ -55,12 +55,15 @@ const App = (props) => {
                 totalPlayers={props.initialPlayers.length}     
             />
             {/* Players List */}
-            { props.initialPlayers.map( player => 
-                <Player 
-                    playerName={player.playerName} 
-                    playerScore={player.playerScore}
-                />
-            )}
+
+            { props.initialPlayers.map( player => {
+                return (
+                    <Player 
+                        playerName={player.playerName} 
+                        playerScore={player.playerScore}
+                    />
+                )
+            })}
         </div>
     );
 }
