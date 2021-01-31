@@ -1,5 +1,4 @@
 const Header = (props) => {
-    console.log(props);
     return (
         <header>
             <h1>{ props.title }</h1>
@@ -32,7 +31,10 @@ const Counter = () => {
 const App = () => {
     return (
         <div className="scoreboard">
-            <Header title="Scooreboard" totalPlayers={1} />
+            <Header 
+                title="Scooreboard" 
+                totalPlayers={2}     
+            />
             {/* Players List */}
             <Player />
         </div>
