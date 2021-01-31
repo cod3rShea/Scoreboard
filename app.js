@@ -7,7 +7,17 @@ const Header = () => {
     );
 }
 
+const Player = () => {
+    return(
+        <div className="player">
+            <span className="player-name">
+                Mike
+            </span>
+        </div>
+    );
+}
+
 ReactDOM.render(
-    <Header />,
+    <Player />,
     document.getElementById('root')
   );
