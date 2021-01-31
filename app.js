@@ -13,12 +13,12 @@ const Player = () => {
             <span className="player-name">
                 Mike
             </span>
-            {<Scooreboard />}
+            {<Counter />}
         </div>
     );
 }
 
-const Scooreboard = () => {
+const Counter = () => {
     return (
         <div className="counter">
             <button className="counter-action decrement"> - </button>
