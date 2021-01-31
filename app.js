@@ -13,6 +13,17 @@ const Player = () => {
             <span className="player-name">
                 Mike
             </span>
+            {<Scooreboard />}
+        </div>
+    );
+}
+
+const Scooreboard = () => {
+    return (
+        <div className="counter">
+            <button className="counter-action decrement"> - </button>
+            <span className="counter-scoore">35</span>
+            <button className="counter-action increment"> + </button>
         </div>
     );
 }
