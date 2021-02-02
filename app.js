@@ -43,7 +43,7 @@ class Counter extends React.Component {
         this.setState( prevState => {
             if ( prevState.score == 0 || isNaN(prevState.score) ){
                 return ({
-                    score: "you loose"
+                    score: "you lose"
                 });
             } else {
                 return ({
