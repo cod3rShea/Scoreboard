@@ -50,17 +50,31 @@ class Counter extends React.Component {
     
     incrementScore = () => {
         this.setState( prevState => {
-            return {
-                score: prevState.score + 1
-            };
+            if(isNaN(prevState.score)){
+                return {
+                    score: 1
+                };
+            } else {
+                return {
+                    score: prevState.score + 1
+                };
+            }
+
         });
       }
     
       decrementScore = () => {
         this.setState( prevState => {
-            return {
-                score: prevState.score - 1
-            };
+            if (prevState.score == 0 || isNaN(prevState.score)){
+                return {
+                    score: "you loose"
+                };
+            } else {
+                return {
+                    score: prevState.score - 1
+                };
+            }
+
         });
       }
 
