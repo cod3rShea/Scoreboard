@@ -11,6 +11,7 @@ const Player = (props) => {
     return(
         <div className="player">
             <span className="player-name">
+                <button className="remove-player" onClick={ () => props.removePlayer(props.id) }>x</button>
                 {props.playerName}
             </span>
             {<Counter />}
@@ -37,9 +38,9 @@ class Counter extends React.Component {
                 });
             }
         });
-      }
+    }
     
-      decrementScore = () => {
+    decrementScore = () => {
         this.setState( prevState => {
             if ( prevState.score == 0 || isNaN(prevState.score) ){
                 return ({
@@ -51,7 +52,7 @@ class Counter extends React.Component {
                 });
             }
         });
-      }
+    }
 
     render() {
       return (
@@ -86,6 +87,14 @@ class App extends React.Component {
         ]
     };
 
+    handleRemovePlater = (id) => {
+        this.setState( prevState => {
+            return({
+                players: prevState.players.filter( p => p.id !== id )
+            })
+        });
+    }
+
     render() {
         return (
             <div className="scoreboard">
@@ -99,8 +108,9 @@ class App extends React.Component {
                     return (
                         <Player
                             playerName={player.playerName} 
-                            playerScore={player.playerScore}
+                            id={player.id}
                             key={player.id.toString()}
+                            removePlayer={this.handleRemovePlater}
                         />
                     )
                 })}
