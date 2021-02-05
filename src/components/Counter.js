@@ -1,41 +1,13 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-
-	incrementScore = () => {
-		this.setState( prevState => {
-			if( isNaN(prevState.score) ){
-				return ({
-					score: 1
-				});
-			} else {
-				return ({
-					score: prevState.score + 1
-				});
-			}
-		});
-	}
-	
-	decrementScore = () => {
-		this.setState( prevState => {
-			if ( prevState.score === 0 || isNaN(prevState.score) ){
-				return ({
-					score: "you lose"
-				});
-			} else {
-				return ({
-					score: prevState.score - 1
-				});
-			}
-		});
-	}
-  
 	render() {
-	  return (
+		let index = this.props.index;
+		return (
 		<div className="counter">
-		  <button className="counter-action decrement"> - </button>
+		  <button className="counter-action decrement" onClick={() => this.props.changeScore(index, -1)}> - </button>
 		  <span className="counter-score">{ this.props.score }</span>
-		  <button className="counter-action increment"> + </button>
+		  <button className="counter-action increment" onClick={() => this.props.changeScore(index, +1)}> + </button>
 		</div>
 	  );
 	}
