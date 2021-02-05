@@ -52,12 +52,6 @@ class App extends Component {
 				});
 			} 
 
-			return (
-				{
-					score: prevState.players[index].score += delta
-				}
-			)
-
 		});
 	}
 
