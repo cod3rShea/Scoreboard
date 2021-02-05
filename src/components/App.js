@@ -31,10 +31,27 @@ class App extends Component {
 
   handleScoreChange = (index, delta) => {
 	this.setState( prevState => {
-		console.log(prevState.players[index].score);
-		return ({
-			score: prevState.players[index].score += delta
-		});
+		
+		const playerScore = prevState.players[index].score += delta;
+
+		if ( prevState.players[index].score === 0 ) {
+			return ({
+				score: prevState.players[index].score = "You Lose"
+			});
+		} else if ( isNaN(prevState.players[index].score) && delta === -1) {
+			return ({
+				score: prevState.players[index].score = "You Lose"
+			});
+		} else if ( isNaN(prevState.players[index].score) && delta === +1 ) {
+			return ({
+				score: prevState.players[index].score = 1
+			});
+		} else  {
+			return ({
+				score: playerScore
+			});
+		} 
+		
 	});
 }
 
